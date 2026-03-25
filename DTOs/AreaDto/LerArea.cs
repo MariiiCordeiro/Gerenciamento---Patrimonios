@@ -2,7 +2,7 @@
 {
     public class LerArea
     {
-        public Guid AreaId { get; set; }
+        public Guid AreaID { get; set; }
         public string NomeArea { get; set; } =string.Empty;
     }
 }
