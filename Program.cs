@@ -1,4 +1,5 @@
 using DotNetEnv;
+using GerenciamentoPatrimonio.Aplications;
 using GerenciamentoPatrimonio.Aplications.Service;
 using GerenciamentoPatrimonio.Contexts;
 using GerenciamentoPatrimonio.Interfaces;
@@ -26,6 +27,10 @@ builder.Services.AddSwaggerGen();
 // Áreas
 builder.Services.AddScoped<IAreaRepository, AreaRepository>();
 builder.Services.AddScoped<AreaService>();
+
+// Locais
+builder.Services.AddScoped<ILocalRepository, LocalRepository>();
+builder.Services.AddScoped<LocalService>();
 
 var app = builder.Build();
 
