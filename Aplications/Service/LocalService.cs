@@ -55,6 +55,13 @@ namespace GerenciamentoPatrimonio.Aplications
         {
             Validar.ValidarNome(dto.NomeLocal);
 
+            Local localExistente = _repository.BuscarPorNome(dto.NomeLocal, dto.AreaID);
+
+            if(localExistente != null)
+            {
+                throw new DomainException("Já existe um loal cadastrado com esse nome nessa área!");
+            }
+
             if (!_repository.AreaExiste(dto.AreaID))
             {
                 throw new DomainException("Área informada não existe!");
@@ -74,6 +81,14 @@ namespace GerenciamentoPatrimonio.Aplications
         public void Atualizar(Guid localId, CriarLocal dto)
         {
             Validar.ValidarNome(dto.NomeLocal);
+
+            Local localExistente = _repository.BuscarPorNome(dto.NomeLocal, dto.AreaID);
+
+            if (localExistente != null)
+            {
+                throw new DomainException("Já existe um loal cadastrado com esse nome nessa área!");
+            }
+
 
             Local localBanco = _repository.BuscarPorId(localId);
 
