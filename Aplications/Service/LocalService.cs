@@ -3,7 +3,7 @@ using GerenciamentoPatrimonio.Domains;
 using GerenciamentoPatrimonio.DTOs.AreaDto;
 using GerenciamentoPatrimonio.DTOs.LocalDto;
 using GerenciamentoPatrimonio.Interfaces;
-using RoyalGames.Exceptions;
+using GerenciamentoPatrimonio.Exceptions;
 
 namespace GerenciamentoPatrimonio.Aplications
 {

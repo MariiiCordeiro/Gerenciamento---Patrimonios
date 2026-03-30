@@ -1,9 +1,10 @@
 ﻿using GerenciamentoPatrimonio.Contexts;
 using GerenciamentoPatrimonio.Domains;
+using GerenciamentoPatrimonio.Interfaces;
 
 namespace GerenciamentoPatrimonio.Repositories
 {
-    public class CidadeRepository
+    public class CidadeRepository: ICidadeRepository
     {
         private readonly GerenciamentoPatrimoniosContext _context;
 
@@ -24,7 +25,25 @@ namespace GerenciamentoPatrimonio.Repositories
 
         public Cidade BuscarPorNomeEEstado(string nomeCidade, string nomeEstado)
         {
-            return _context.Cidade.FirstOrDefault(cidade => cidade.NomeCidade.ToLower == nomeCidade.ToLower() && nomeEstado.Estado = nome
+            return _context.Cidade.FirstOrDefault(cidade => cidade.NomeCidade.ToLower() == nomeCidade.ToLower() && nomeEstado.Estado == nomeEstado);
+        }
+
+        public void Atualizar(Cidade cidade)
+        {
+            if(cidade == null)
+            {
+                return;
+            }
+             Cidade cidadeBanco = _context.Cidade.Find(cidade.CidadeID);
+
+            cidadeBanco.NomeCidade = cidade.NomeCidade;
+            _context.SaveChanges();
+        }
+
+        public void Adicionar(Cidade cidade)
+        {
+            _context.Cidade.Add(cidade);
+            _context.SaveChanges();
         }
     }
 }

@@ -1,40 +1,37 @@
-﻿using GerenciamentoPatrimonio.Aplications;
-using GerenciamentoPatrimonio.DTOs.AreaDto;
-using GerenciamentoPatrimonio.DTOs.LocalDto;
+﻿using GerenciamentoPatrimonio.Aplications.Service;
+using GerenciamentoPatrimonio.DTOs.CidadeDto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using GerenciamentoPatrimonio.Exceptions;
+
 
 namespace GerenciamentoPatrimonio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LocalController : ControllerBase
+    public class CidadeController : ControllerBase
     {
+        private readonly CidadeService _service;
 
-        private readonly LocalService _service;
-
-        public LocalController(LocalService service)
+        public CidadeController(CidadeService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public ActionResult<List<LerLocal>> Listar()
+        public ActionResult<List<LerCidade>> Listar()
         {
-            List<LerLocal> locais = _service.Listar();
-
-            return Ok(locais);
+            List<LerCidade> cidade = _service.Listar();
+            return Ok(cidade);
         }
 
         [HttpGet("{id}")]
-
-        public ActionResult<LerLocal> BuscarPorId(Guid id)
+        public ActionResult<LerCidade> BuscarPorId(Guid id)
         {
             try
             {
-                LerLocal local = _service.BuscarPorId(id);
-                return Ok(local);
+                LerCidade cidade = _service.BuscarPorId(id);
+                return Ok(cidade);
             }
             catch (DomainException ex)
             {
@@ -43,7 +40,7 @@ namespace GerenciamentoPatrimonio.Controllers
         }
 
         [HttpPost]
-        public ActionResult Adicionar(CriarLocal dto)
+        public ActionResult Adicionar(CriarCidade dto)
         {
             try
             {
@@ -54,10 +51,11 @@ namespace GerenciamentoPatrimonio.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            
         }
 
         [HttpPut("{id}")]
-        public ActionResult Atualizar(Guid id, CriarLocal dto)
+        public ActionResult Atualizar(Guid id, CriarCidade dto)
         {
             try
             {
@@ -69,6 +67,8 @@ namespace GerenciamentoPatrimonio.Controllers
                 return BadRequest(ex.Message);
             }
         }
-    }
 
+          
+
+    }
 }

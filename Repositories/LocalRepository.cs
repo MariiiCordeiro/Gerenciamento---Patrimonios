@@ -1,7 +1,6 @@
 ﻿using GerenciamentoPatrimonio.Aplications.Regras;
 using GerenciamentoPatrimonio.Contexts;
 using GerenciamentoPatrimonio.Domains;
-using GerenciamentoPatrimonio.DTOs.AreaDto;
 using GerenciamentoPatrimonio.DTOs.LocalDto;
 using GerenciamentoPatrimonio.Interfaces;
 

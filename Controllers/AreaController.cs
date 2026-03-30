@@ -2,7 +2,7 @@
 using GerenciamentoPatrimonio.DTOs.AreaDto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RoyalGames.Exceptions;
+using GerenciamentoPatrimonio.Exceptions;
 
 namespace GerenciamentoPatrimonio.Controllers
 {

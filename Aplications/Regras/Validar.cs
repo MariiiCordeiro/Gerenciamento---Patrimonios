@@ -1,4 +1,4 @@
-﻿using RoyalGames.Exceptions;
+﻿using GerenciamentoPatrimonio.Exceptions;
 
 namespace GerenciamentoPatrimonio.Aplications.Regras
 {

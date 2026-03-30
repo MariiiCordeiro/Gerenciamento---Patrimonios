@@ -1,4 +1,4 @@
-﻿namespace RoyalGames.Exceptions
+﻿namespace GerenciamentoPatrimonio.Exceptions
 {
     public class DomainException : Exception
     {

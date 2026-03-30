@@ -7,9 +7,9 @@ namespace GerenciamentoPatrimonio.Interfaces
     {
         List<Cidade> Listar();
 
-        Cidade BuscarPorID(Guid cidadeId);
+        Cidade BuscarPorId(Guid cidadeId);
 
-        Cidade BuscarPorNomeEEstado(string nomeCidade, string NomeEstado);
+        Cidade BuscarPorNomeEEstado(string nomeCidade, string nomeEstado);
 
         void Atualizar(Cidade cidade);
 
