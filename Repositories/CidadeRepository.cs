@@ -25,7 +25,7 @@ namespace GerenciamentoPatrimonio.Repositories
 
         public Cidade BuscarPorNomeEEstado(string nomeCidade, string nomeEstado)
         {
-            return _context.Cidade.FirstOrDefault(cidade => cidade.NomeCidade.ToLower() == nomeCidade.ToLower() && nomeEstado.Estado == nomeEstado);
+            return _context.Cidade.FirstOrDefault(cidade => cidade.NomeCidade.ToLower() == nomeCidade.ToLower() && cidade.Estado.ToLower() == nomeEstado);
         }
 
         public void Atualizar(Cidade cidade)

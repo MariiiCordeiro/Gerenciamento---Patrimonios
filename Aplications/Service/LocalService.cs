@@ -59,7 +59,7 @@ namespace GerenciamentoPatrimonio.Aplications
 
             if(localExistente != null)
             {
-                throw new DomainException("Já existe um loal cadastrado com esse nome nessa área!");
+                throw new DomainException("Já existe um local cadastrado com esse nome nessa área!");
             }
 
             if (!_repository.AreaExiste(dto.AreaID))

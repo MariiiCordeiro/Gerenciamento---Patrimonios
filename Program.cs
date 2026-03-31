@@ -40,6 +40,15 @@ builder.Services.AddScoped<CidadeService>();
 builder.Services.AddScoped<IBairroRepository, BairroRepository>();
 builder.Services.AddScoped<BairroService>();
 
+// Usuarios
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<UsuarioService>();
+
+
+//// Enderecos
+//builder.Services.AddScoped<IBairroRepository, BairroRepository>();
+//builder.Services.AddScoped<BairroService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

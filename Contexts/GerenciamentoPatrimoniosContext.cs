@@ -47,6 +47,7 @@ public partial class GerenciamentoPatrimoniosContext : DbContext
     public virtual DbSet<Usuario> Usuario { get; set; }
 
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Area>(entity =>
@@ -349,6 +350,7 @@ public partial class GerenciamentoPatrimoniosContext : DbContext
             entity.Property(e => e.NomeUsuario)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.PrimeiroAcesso).HasDefaultValue(true);
             entity.Property(e => e.RG)
                 .HasMaxLength(15)
                 .IsUnicode(false);
