@@ -22,7 +22,9 @@ namespace GerenciamentoPatrimonio.Aplications.Service
             List<LerCidade> cidadeDto = cidades.Select(cidade => new LerCidade
             {
                 CidadeID = cidade.CidadeID,
-                NomeCidade = cidade.NomeCidade}).ToList();
+                NomeCidade = cidade.NomeCidade,
+                Estado = cidade.Estado
+            }).ToList();
 
             return cidadeDto;
         }
@@ -56,7 +58,8 @@ namespace GerenciamentoPatrimonio.Aplications.Service
 
             Cidade cidade = new Cidade
             {
-                NomeCidade = dto.NomeCidade
+                NomeCidade = dto.NomeCidade,
+                Estado = dto.Estado
             };
             _repository.Adicionar(cidade);
         }

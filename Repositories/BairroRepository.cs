@@ -34,6 +34,7 @@ namespace GerenciamentoPatrimonio.Repositories
             _context.SaveChanges();
         }
 
+
         public void Atualizar(Bairro bairro)
         {
             if(bairro == null)

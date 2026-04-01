@@ -46,8 +46,6 @@ public partial class GerenciamentoPatrimoniosContext : DbContext
 
     public virtual DbSet<Usuario> Usuario { get; set; }
 
-
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Area>(entity =>

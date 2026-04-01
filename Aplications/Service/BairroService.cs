@@ -53,13 +53,19 @@ namespace GerenciamentoPatrimonio.Aplications.Service
 
             if (bairroExistente != null)
             {
-                throw new DomainException("Já existe uma área com esse nome!");
+                throw new DomainException("Já existe uma bairro com esse nome!");
+            }
+
+            if (!_repository.CidadeExiste(dto.CidadeId))
+            {
+                throw new DomainException("Cidade não existe!");
             }
 
             Bairro bairro = new Bairro
             {
                 // areaid = guid.newguid caso não houvesse a geração a!utomática no banco, portanto será só o nome que sera passado aqui.
-                NomeBairro = dto.NomeBairro
+                NomeBairro = dto.NomeBairro,
+                CidadeID = dto.CidadeId
             };
 
             _repository.Adicionar(bairro);

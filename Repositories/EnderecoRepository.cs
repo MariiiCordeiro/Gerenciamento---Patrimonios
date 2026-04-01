@@ -1,66 +1,66 @@
-﻿//using GerenciamentoPatrimonio.Aplications.Regras;
-//using GerenciamentoPatrimonio.Contexts;
-//using GerenciamentoPatrimonio.Domains;
-//using GerenciamentoPatrimonio.Interfaces;
+﻿using GerenciamentoPatrimonio.Aplications.Regras;
+using GerenciamentoPatrimonio.Contexts;
+using GerenciamentoPatrimonio.Domains;
+using GerenciamentoPatrimonio.Interfaces;
 
-//namespace GerenciamentoPatrimonio.Repositories
-//{
-//    public class EnderecoRepository : lEnderecoRepository
-//    {
-//        private readonly GerenciamentoPatrimoniosContext _context;
+namespace GerenciamentoPatrimonio.Repositories
+{
+    public class EnderecoRepository : lEnderecoRepository
+    {
+        private readonly GerenciamentoPatrimoniosContext _context;
 
-//        public EnderecoRepository(GerenciamentoPatrimoniosContext context)
-//        {
-//            _context = context;
-//        } 
-        
-//        public List<Endereco> Listar()
-//        {
-//            return _context.Endereco.OrderBy(endereco => endereco.Longradouro).ToList();
-//        }
+        public EnderecoRepository(GerenciamentoPatrimoniosContext context)
+        {
+            _context = context;
+        }
 
-//        public Endereco BuscarPorId(Guid enderecoId)
-//        {
-//            return _context.Endereco.Find(enderecoId);
-//        }
+        public List<Endereco> Listar()
+        {
+            return _context.Endereco.OrderBy(endereco => endereco.Longradouro).ToList();
+        }
 
-//        public void Adicionar(Endereco endereco)
-//        {
-//            _context.Endereco.Add(endereco);
-//            _context.SaveChanges();
-//        }
+        public Endereco BuscarPorId(Guid enderecoId)
+        {
+            return _context.Endereco.Find(enderecoId);
+        }
 
-//        public void Atualizar(Endereco endereco)
-//        {
-//            if(endereco == null)
-//            {
-//                return;
-//            }
+        public void Adicionar(Endereco endereco)
+        {
+            _context.Endereco.Add(endereco);
+            _context.SaveChanges();
+        }
 
-//            Endereco enderecoBanco = _context.Endereco.Find(endereco.EnderecoID);
+        public void Atualizar(Endereco endereco)
+        {
+            if (endereco == null)
+            {
+                return;
+            }
 
-//            if(enderecoBanco == null)
-//            {
-//                return;
-//            }
+            Endereco enderecoBanco = _context.Endereco.Find(endereco.EnderecoID);
 
-//            enderecoBanco.Longradouro = endereco.Longradouro;
-//            enderecoBanco.Numero = endereco.Numero;
-//            enderecoBanco.Complemento = endereco.Complemento;
-//            enderecoBanco.CEP = endereco.CEP;
-//            enderecoBanco.BairroID = endereco.BairroID;
+            if (enderecoBanco == null)
+            {
+                return;
+            }
 
-//            _context.SaveChanges();
-//        }
+            enderecoBanco.Longradouro = endereco.Longradouro;
+            enderecoBanco.Numero = endereco.Numero;
+            enderecoBanco.Complemento = endereco.Complemento;
+            enderecoBanco.CEP = endereco.CEP;
+            enderecoBanco.BairroID = endereco.BairroID;
 
-//        public Endereco BuscarPorLongradouroENumero(string longradouro, int? numero, Guid bairroId)
-//        {
-//            return _context.Endereco.FirstOrDefault(endereco => endereco.Longradouro.ToLower() == longradouro.ToLower() && endereco.Numero == numero && endereco.BairroID == bairroId);
-//        }
+            _context.SaveChanges();
+        }
 
-//        public bool BairroExiste(Guid bairroId)
-//        {
-//            return _context.Endereco.Any(bairro => bairro.BairroID == bairroId);
-//        }
-//    }
-//}
+        public Endereco BuscarPorLongradouroENumero(string longradouro, int? numero, Guid bairroId)
+        {
+            return _context.Endereco.FirstOrDefault(endereco => endereco.Longradouro.ToLower() == longradouro.ToLower() && endereco.Numero == numero && endereco.BairroID == bairroId);
+        }
+
+        public bool BairroExiste(Guid bairroId)
+        {
+            return _context.Endereco.Any(bairro => bairro.BairroID == bairroId);
+        }
+    }
+}

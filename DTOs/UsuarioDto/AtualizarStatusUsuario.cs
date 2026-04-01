@@ -2,5 +2,6 @@
 {
     public class AtualizarStatusUsuario
     {
+        public bool Ativo {  get; set; }
     }
 }

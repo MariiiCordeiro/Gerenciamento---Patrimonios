@@ -24,7 +24,7 @@ namespace GerenciamentoPatrimonio.Controllers
             return Ok(bairro);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public ActionResult<LerBairro> BuscarPorId(Guid id)
         {
             try
@@ -52,7 +52,7 @@ namespace GerenciamentoPatrimonio.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public ActionResult Atualizar(Guid id, CriarBairro dto)
         {
             try

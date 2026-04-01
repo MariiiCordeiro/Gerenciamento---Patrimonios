@@ -33,6 +33,8 @@ namespace GerenciamentoPatrimonio.Aplications.Service
                 CargoID = usuario.CargoID,
                 TipoUsuarioID = usuario.TipoUsuarioID
             }).ToList();
+
+            return usuarioDto;
         }
     }
 }
