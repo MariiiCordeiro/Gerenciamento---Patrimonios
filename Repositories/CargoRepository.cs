@@ -44,11 +44,6 @@ namespace GerenciamentoPatrimonio.Repositories
 
             Cargo cargoBanco = _context.Cargo.Find(cargo.CargoID);
 
-            if(cargoBanco != null)
-            {
-                return;
-            }
-
             cargoBanco.NomeCargo = cargo.NomeCargo;
             cargoBanco.CargoID = cargo.CargoID;
 

@@ -4,8 +4,6 @@ namespace GerenciamentoPatrimonio.DTOs.CargoDto
 {
     public class CriarCargo
     {
-        public string NomeCargo { get; set; } = null!;
-
-        public virtual ICollection<Usuario> Usuario { get; set; } = new List<Usuario>();
+        public string NomeCargo { get; set; } = string.Empty;
     }
 }
