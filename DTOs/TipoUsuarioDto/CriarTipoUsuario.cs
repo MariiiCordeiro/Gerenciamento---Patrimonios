@@ -1,8 +1,7 @@
 ﻿namespace GerenciamentoPatrimonio.DTOs.TipoUsuarioDto
 {
-    public class LerTipoUsuario
+    public class CriarTipoUsuario
     {
-        public Guid TipoUsuarioID { get; set; }
         public string NomeTipo { get; set; } = string.Empty;
     }
 }

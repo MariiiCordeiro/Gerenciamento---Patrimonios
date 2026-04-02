@@ -5,7 +5,6 @@ namespace GerenciamentoPatrimonio.Interfaces
     public interface ITipoUsuarioRepository
     {
         List<TipoUsuario> Listar();
-
         TipoUsuario BuscarPorId(Guid tipoUsuarioId);
         TipoUsuario BuscarPorNme(string nomeTipo);
 
