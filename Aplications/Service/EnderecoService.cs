@@ -22,6 +22,7 @@ namespace GerenciamentoPatrimonio.Aplications.Service
             {
                 EnderecoId = endereco.EnderecoID,
                 Longradouro = endereco.Longradouro,
+                Numero = endereco.Numero,
                 Complemento = endereco.Complemento,
                 CEP = endereco.CEP,
                 BairroId = endereco.BairroID
@@ -57,7 +58,7 @@ namespace GerenciamentoPatrimonio.Aplications.Service
 
             if (enderecoExistente != null)
             {
-                throw new DomainException("Já existe um endereço cadastrado com esse nome nome nesse bairro");
+                throw new DomainException("Já existe um endereço cadastrado com esse nome nesse bairro");
             }
 
             if (!_repository.BairroExiste(dto.BairroId))

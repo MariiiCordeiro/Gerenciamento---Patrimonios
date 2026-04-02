@@ -46,8 +46,12 @@ builder.Services.AddScoped<UsuarioService>();
 
 
 // Enderecos
-builder.Services.AddScoped<IBairroRepository, BairroRepository>();
-builder.Services.AddScoped<BairroService>();
+builder.Services.AddScoped<lEnderecoRepository, EnderecoRepository>();
+builder.Services.AddScoped<EnderecoService>();
+
+// Cargos
+builder.Services.AddScoped<ICargoRepository, CargoRepository>();
+builder.Services.AddScoped<CargoService>();
 
 var app = builder.Build();
 

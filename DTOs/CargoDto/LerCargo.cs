@@ -6,7 +6,7 @@ namespace GerenciamentoPatrimonio.DTOs.CargoDto
     {
         public Guid CargoID { get; set; }
 
-        public string NomeCargo { get; set; } = null!;
+        public string NomeCargo { get; set; } = string.Empty;
 
     }
 }

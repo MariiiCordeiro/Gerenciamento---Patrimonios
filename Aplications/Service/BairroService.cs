@@ -53,7 +53,7 @@ namespace GerenciamentoPatrimonio.Aplications.Service
 
             if (bairroExistente != null)
             {
-                throw new DomainException("Já existe uma bairro com esse nome!");
+                throw new DomainException("Já existe um bairro com esse nome!");
             }
 
             if (!_repository.CidadeExiste(dto.CidadeId))

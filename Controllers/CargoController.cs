@@ -1,6 +1,6 @@
 ﻿using GerenciamentoPatrimonio.Aplications.Service;
-using GerenciamentoPatrimonio.DTOs.AreaDto;
-using GerenciamentoPatrimonio.DTOs.EnderecoDto;
+using GerenciamentoPatrimonio.DTOs.BairroDto;
+using GerenciamentoPatrimonio.DTOs.CargoDto;
 using GerenciamentoPatrimonio.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,58 +9,43 @@ namespace GerenciamentoPatrimonio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EnderecoController : ControllerBase
+    public class CargoController : ControllerBase
     {
-        private readonly EnderecoService _service;
+        private readonly CargoService _service;
 
-        public EnderecoController(EnderecoService service)
+        public CargoController(CargoService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public ActionResult<List<LerEndereco>> Listar()
+        public ActionResult<List<LerCargo>> Listar()
         {
-            List<LerEndereco> enderecos = _service.Listar();
-            return Ok(enderecos);
+            List<LerCargo> cargos = _service.Listar();
+            return cargos;
         }
 
-
         [HttpGet("{id}")]
-        public ActionResult<LerEndereco> BuscarPorID(Guid id)
+        public ActionResult<LerCargo> BuscarPorId(Guid id)
         {
             try
             {
-                LerEndereco endereco = _service.BuscarPorId(id);
-                return Ok(endereco);
+                LerCargo cargo = _service.BuscarPorId(id);
+                return Ok(cargo);
             }
             catch (DomainException ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(ex.Message);
             }
         }
 
         [HttpPost]
-        public ActionResult Adicionar(CriarEndereco dto)
+        public ActionResult Adiconar(CriarCargo dto)
         {
             try
             {
                 _service.Adicionar(dto);
                 return Created();
-            }
-            catch (DomainException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult Ataulizar(Guid id,CriarEndereco dto)
-        {
-            try
-            {
-                _service.Atualizar(id, dto);
-                return Ok(dto);
             }
             catch(DomainException ex)
             {
@@ -68,7 +53,18 @@ namespace GerenciamentoPatrimonio.Controllers
             }
         }
 
-
-
+        [HttpPut("{id}")]
+        public ActionResult Atualizar(Guid id, CriarCargo dto)
+        {
+            try
+            {
+                _service.Atualizar(id, dto);
+                return Ok();
+            }
+            catch(DomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

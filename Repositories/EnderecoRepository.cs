@@ -60,7 +60,7 @@ namespace GerenciamentoPatrimonio.Repositories
 
         public bool BairroExiste(Guid bairroId)
         {
-            return _context.Endereco.Any(bairro => bairro.BairroID == bairroId);
+            return _context.Bairro.Any(bairro => bairro.BairroID == bairroId);
         }
     }
 }
