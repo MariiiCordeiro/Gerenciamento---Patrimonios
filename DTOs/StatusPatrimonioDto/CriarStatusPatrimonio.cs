@@ -2,5 +2,6 @@
 {
     public class CriarStatusPatrimonio
     {
+        public string Status { get; set; } = string.Empty;
     }
 }

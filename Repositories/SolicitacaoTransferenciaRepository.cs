@@ -1,6 +1,6 @@
 ﻿namespace GerenciamentoPatrimonio.Repositories
 {
-    public class SolicitacaoTransferecia
+    public class SolicitacaoTransferencia
     {
     }
 }

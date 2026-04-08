@@ -26,7 +26,7 @@ namespace GerenciamentoPatrimonio.Repositories
 
         public Cargo BuscarPorNome(string nomeCargo)
         {
-            return _context.Cargo.FirstOrDefault(cargo => cargo.NomeCargo.ToLower() == nomeCargo);
+            return _context.Cargo.FirstOrDefault(cargo => cargo.NomeCargo.ToLower() == nomeCargo.ToLower());
         }
 
         public void Adicionar(Cargo cargo)
