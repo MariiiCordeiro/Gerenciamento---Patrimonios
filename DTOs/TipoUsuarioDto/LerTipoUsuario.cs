@@ -2,7 +2,7 @@
 {
     public class LerTipoUsuario
     {
-        public Guid TipoUsuarioID { get; set; }
+        public Guid TipoUsuarioId { get; set; }
         public string NomeTipo { get; set; } = string.Empty;
     }
 }

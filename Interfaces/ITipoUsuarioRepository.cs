@@ -6,7 +6,7 @@ namespace GerenciamentoPatrimonio.Interfaces
     {
         List<TipoUsuario> Listar();
         TipoUsuario BuscarPorId(Guid tipoUsuarioId);
-        TipoUsuario BuscarPorNme(string nomeTipo);
+        TipoUsuario BuscarPorNome(string nomeTipo);
 
         void Adicionar(TipoUsuario tipoUsuario);
         void Atualizar(TipoUsuario tipoUsuario);
