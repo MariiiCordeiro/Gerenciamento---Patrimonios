@@ -2,6 +2,6 @@
 {
     public class CriarStatusTransferencia
     {
-        public string NomeStatus { get; set; } = string.Empty;
+        public string Status { get; set; } = string.Empty;
     }
 }
