@@ -10,4 +10,9 @@ public partial class StatusTransferencia
     public string Status { get; set; } = null!;
 
     public virtual ICollection<SolicitacaoTransferencia> SolicitacaoTransferencia { get; set; } = new List<SolicitacaoTransferencia>();
+
+    internal object ToLower()
+    {
+        throw new NotImplementedException();
+    }
 }

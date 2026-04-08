@@ -53,6 +53,13 @@ builder.Services.AddScoped<EnderecoService>();
 builder.Services.AddScoped<ICargoRepository, CargoRepository>();
 builder.Services.AddScoped<CargoService>();
 
+//Solicitação Transferência
+builder.Services.AddScoped<ISolicitacaoTransferenciaRepository, SolicitacaoTransferenciaRepository>();
+builder.Services.AddScoped<SolicitacaoTransferenciaService>();
+
+//trocar o builder e colocar a autenticação e logtransferencia
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -13,7 +13,7 @@ public partial class Endereco
 
     public string? Complemento { get; set; }
 
-    public string? CEP { get; set; }
+    public string CEP { get; set; } = null!;
 
     public Guid BairroID { get; set; }
 
